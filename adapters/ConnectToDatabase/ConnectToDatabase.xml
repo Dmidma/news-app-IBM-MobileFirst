@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+    5725-I43 (C) Copyright IBM Corp. 2011, 2013. All Rights Reserved.
+    US Government Users Restricted Rights - Use, duplication or
+    disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+--> 
+<wl:adapter name="ConnectToDatabase"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:wl="http://www.ibm.com/mfp/integration"
+	xmlns:sql="http://www.ibm.com/mfp/integration/sql">
+
+	<displayName>ConnectToDatabase</displayName>
+	<description>ConnectToDatabase</description>
+	<connectivity>
+		<connectionPolicy xsi:type="sql:SQLConnectionPolicy">
+			<!-- Example for using a JNDI data source, replace with actual data source name -->
+			<!-- <dataSourceJNDIName>java:/data-source-jndi-name</dataSourceJNDIName> -->
+			
+			<!-- Example for using MySQL connector, do not forget to put the MySQL connector library in the project's lib folder -->
+			<dataSourceDefinition>
+				<driverClass>com.mysql.jdbc.Driver</driverClass>
+				<url>${dbUrl}</url>
+			    <user>${dbUser}</user>
+    			<password>${dbPassword}</password> 
+			</dataSourceDefinition>
+		</connectionPolicy>
+	</connectivity>
+
+	<!-- Replace this with appropriate procedures -->
+	<procedure name="getSources"/>	
+	<procedure name="preparingStatement"/>
+	<procedure name="catchThemAll" audit="false"/>
+	
+	<!-- General database procedures -->
+	<procedure name="getTables"/>
+
+	<!-- news_feed functions -->
+	<procedure name="inNewsFeed"/>
+	<procedure name="getNewsFeed"/>
+	<procedure name="getOlderNewsFeed"/>
+	<procedure name="getSearchedNews"/>
+	
+	<!-- email_domains functions -->
+	<procedure name="getEmailDomain"/>
+	<procedure name="pushEmailDomain"/>
+
+	<!-- email functions -->
+	<procedure name="pushEmail1"/>
+	<procedure name="pushEmail2"/>
+	<procedure name="getEmailId"/>
+	
+	<!-- user_registery functions -->
+	<procedure name="getUserByUserName"/>
+	<procedure name="getUserByEmail"/>
+	<procedure name="registerUser"/>
+	<procedure name="getUserId"/>
+	<procedure name="getSaltAndPassFromUser"/>
+	
+	<!-- saved_news functions -->
+	<procedure name="getNewsForUserID"/>
+	<procedure name="saveNewsForUserID"/>
+	<procedure name="deleteNewsFromUserID"/>
+	
+	<!-- news_sources functions -->
+	<procedure name="getSourceImage"/>
+	<procedure name="getSourceId"/>
+	<procedure name="getAllSources"/>
+	
+	
+	<!-- weather functions -->
+	<procedure name="insertWeather"/>
+	<procedure name="fetchWeather"/>
+	<procedure name="checkedWeather"/>
+	<procedure name="fetchTodayWeather"/>
+	<procedure name="weatherFor16Days"/>
+	<procedure name="fetch16DaysWeather"/>
+
+	<!-- location function -->
+	<procedure name="insertLocation"/>
+	<procedure name="getLocationLatLon"/>
+	<procedure name="getLocationId" />
+	
+	<!-- Try it out first -->
+	<procedure name="tryMe"/>
+</wl:adapter>

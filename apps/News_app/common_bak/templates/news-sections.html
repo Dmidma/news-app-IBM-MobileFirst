@@ -1,0 +1,14 @@
+<!-- this HTML page will handle the fetched news through the APIs -->
+<div ng-controller="newsController as news" >
+	<ion-list-header>{{news.hello}}</ion-list-header>
+	<div class="list list-inset" >
+		<a href="#/tab/dash/{{new.newsId}}" ng-repeat="new in getAllNews() | orderBy:'pub_date':true ">
+			<div class="item newsItem">
+			 <img class="sourca" src="{{new.sourceImg}}">
+				<!-- Maybe add a close button -->
+				<!-- <i class="closeMe ion-ios-close-outline"></i> -->
+				<h3 class="try">{{new.main}}</h3>
+			</div>
+		</a>
+	</div>
+</div>

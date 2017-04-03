@@ -1,0 +1,35 @@
+<!-- this HTML page will handle the fetched news through the APIs -->
+<div ng-controller="newsController as news" >
+  
+  <div class="item-input-inset">
+  <label class="item item-input">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" placeholder="Search" ng-model="searchQuery">
+  </label>  
+  <button class="clearButton" ng-click="search()">
+      <i class="icon ion-arrow-right-c"></i>
+    </button>
+  
+    <button class="clearButton" ng-click="clearAll()">
+    X
+  </button>
+</div>
+  
+
+	<ion-list-header>{{news.hello}}</ion-list-header> 
+	<ion-list>
+      <div id="NoMatch" class="hidMe"> Sorry No Match Found</div>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="new in getAllNews() | orderBy:'pub_date':true " type="item-text-wrap" href="#/app/tab/dash/{{new.newsId}}">
+        <img class="sourca" src="{{new.sourceImg}}">
+        <h3 class="try">{{new.main}}</h3>
+      </ion-item>
+    </ion-list>
+
+
+
+   <ion-infinite-scroll
+    	on-infinite="loadMore()"
+    	distance="1%">
+  </ion-infinite-scroll>
+
+</div>

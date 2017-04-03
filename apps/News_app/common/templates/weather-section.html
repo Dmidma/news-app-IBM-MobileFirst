@@ -1,0 +1,22 @@
+<div ng-show="!readyLoc">
+    <img class="center fit" src="https://media.giphy.com/media/PLJzdMVafDLTW/giphy.gif">
+</div>
+<div ng-show="readyLoc">
+    <div class="card">
+  	<div class="item item-divider">
+   		<i class="headTex">{{temp + "°"}}</i><i ng-show="readyLoc" class="headInf ion-thermometer firstT"></i>
+   		<i class="headTex">{{humidity + "%"}}</i><i ng-show="readyLoc" class="headInf ion-waterdrop"></i>
+   		<i class="headTex">{{wind + "mps"}}</i><i ng-show="readyLoc" class="headInf ion-flag"></i>
+  	</div>
+  	<div class="item item-text-wrap">
+  		<i ng-show="readyLoc" id="iconI" class="icon iconB"></i><i class="nexIcon">{{description}}</i>
+  	</div>
+  	<div class="item item-divider">
+  		<i class="locate">{{places.level1}}</i><i ng-show="readyLoc" class="locate ion-ios-location-outline"></i>
+  	</div>
+    </div>
+    <br/>
+    <br/>
+     <table id="weather_table" style="width:100%">
+    </table> 
+</div>

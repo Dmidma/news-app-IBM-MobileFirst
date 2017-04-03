@@ -1,0 +1,27 @@
+<ion-view view-title="Details">
+  <ion-content class="padding">
+
+  	<div class="list card">
+
+  		<div class="item item-avatar">
+    		<img src="{{getIt(newsId).sourceImg}}">
+    		<h2 class="try">{{getIt(newsId).main}}</h2>
+    		<p>{{getIt(newsId).pub_date | date }}</p>
+        <p ng-show="{{getIt(newsId).authi}}">{{getIt(newsId).author}}</p>
+  		</div>
+
+  		<div class="item item-body">
+    		<img ng-show="{{getIt(newsId).medi}}" class="full-image" src="{{getIt(newsId).multimedia}}">
+    		<p>{{getIt(newsId).snippet}}</p>
+    		<a class="righty" target="_blank" href="{{getIt(newsId).web_url}}" >Read More...</a>
+        <button class="button button-small button-assertive" ng-click="saveMe()">Save</button>
+        
+    		<!--
+    		<p>
+      			<a class="subdued">1 Like</a>
+      			<a class="subdued">5 Comments</a>
+    		</p> -->
+  		</div>
+	</div>
+  </ion-content>
+</ion-view>

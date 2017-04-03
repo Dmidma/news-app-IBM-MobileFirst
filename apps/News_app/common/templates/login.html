@@ -1,0 +1,32 @@
+<ion-view view-title="Login" name="login-view">
+    <ion-content class="padding">
+
+<!--
+Custom-Authentication 
+    	<div id="MainPage">
+			<button class="button button-balanced" ng-click="kool()" onclick="getDataFromJSAdapter()" class="btn btn-default btn-block">LogIn</button>
+		</div>
+-->
+
+        <div id="LoginPage" class="list list-inset">
+			<!--
+			the onclick="loginButtonClick()" was defined in main.js as part of custom authentication 
+			<button class="button button-block button-calm" onclick="loginButtonClick()">Submit</button>
+			-->
+
+			<input id="username" type="text" class="center sign-up-input" placeholder="What's your username?" ng-model="data.username">
+
+			<input id="password" type="password" class="center sign-up-input" placeholder="Enter your password" ng-model="data.password">
+			<button class="center login_button" ng-click="submitIt()" >Connect me to News!</button>
+		</div>
+
+<!--
+Custom-Authentication 
+		<div ng-show="kolt" id="done">
+			<button id="cliqua" ng-click="yas()" class="btn btn-default btn-block">Done</button>
+		</div>
+-->
+	</ion-content>
+</ion-view>
+
+

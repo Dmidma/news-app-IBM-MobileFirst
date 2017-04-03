@@ -1,0 +1,55 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+  
+    
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+  
+
+    <!-- This element is very important since it will tell the framework
+         that the view "menuContent" will go here.  -->
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+
+  <ion-side-menu side="left">
+    <div class="bar bar-header bar-positive">
+      <h1 class="title">Hey {{userName}}</h1>
+    </div>
+    <ion-content>
+
+    
+      <ion-list>
+
+        <ion-item menu-close href="#/app/tab">
+          Home
+        </ion-item>
+        
+        <!-- This section will contains the sources of news. -->
+        <ion-item menu-close href="#/app/filter">
+          News Sources
+        </ion-item>
+        
+        <ion-item menu-close ng-click="goThere()">
+          saved News
+          <svg width="30" height="30" style="float: right;">
+              <rect width="30" height="30" style="fill:rgb(80,80,80);stroke-width:3;stroke:rgb(0,0,0)" />
+              <text x="5" y="22" font-family="Verdana" font-size="20" style="fill:rgb(255,255,255);">
+                {{nbrSavedNews}}
+              </text>
+          </svg>
+        </ion-item>
+        <ion-item ng-click="byeBye()" menu-close >
+          logout
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,25 @@
+html, body {
+	height: 100%;
+}
+
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+
+#notYet {
+	position:fixed;
+    top: 35%;
+    left: 20%;
+    color: #808080;
+}
+
+#NoMatch {
+	position:fixed;
+    top: 35%;
+    left: 20%;
+    color: #808080;
+}
+
+.hidMe {
+	visibility: hidden;
+}

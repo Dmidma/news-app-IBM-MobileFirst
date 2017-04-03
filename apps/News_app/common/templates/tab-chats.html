@@ -1,0 +1,24 @@
+<ion-view view-title="Saved News">
+  <ion-content>
+    
+    <!-- only will be displayed if the user has no saved news -->
+    <h2 ng-hide="fama" id="notYet">No News Yet!</h2>
+
+
+
+    <ion-list ng-show="fama">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="new in getAllNews() | orderBy:'saved_time':true " type="item-text-wrap" href="#/app/tab/chats/{{new.newsId}}">
+        <img class="sourca" src="{{new.sourceImg}}">
+        <h3 class="try">{{new.main}}</h3>
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="deleteIt(new.newsId)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,14 @@
+<ion-view view-title="Sign Up" name="signup-view">
+    <ion-content class="padding">
+        <div class="list list-inset">
+				<input required="true" class="center sign-up-input" type="text" placeholder="Name" ng-model="data.name">
+				<input required="true" class="center sign-up-input" type="text" placeholder="Last Name" ng-model="data.lastName">
+				<input required="true" class="center sign-up-input" type="text" placeholder="Username" ng-model="data.username">
+				<input required="true" class="center sign-up-input" type="password" placeholder="Password" ng-model="data.password">
+				<input required="true" class="center sign-up-input" type="password" placeholder="Confirm" ng-model="data.confirm">
+				<input required="true" class="center sign-up-input" type="email" placeholder="Email" ng-model="data.email">
+		</div>
+		<button class="center login_button" ng-click="signup()">Sign Me Up Please!</button>
+		<div id="infoH"></div>
+	</ion-content>
+</ion-view>
